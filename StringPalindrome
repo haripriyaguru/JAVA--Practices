@@ -1,0 +1,19 @@
+import java.util.*;
+public class StringPalindrome{
+	public static void isPalindrome(String str){
+	    String copy=str;
+	    StringBulider string=new StringBuilder(str);
+	    String reversed = string.reverse().toString();
+	    if(copy.equals(reversed)){
+	        System.out.println("Palindrome");
+	    }else{
+	        System.out.println("not palindrome");
+	    }
+	    
+	}
+	public static void main(String[] args){
+	    Scanner sc=new Scanner(System.in);
+	    int str=sc.nextLine();
+	    isPalindrome(str);
+	}
+}
