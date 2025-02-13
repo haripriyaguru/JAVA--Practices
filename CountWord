@@ -1,0 +1,13 @@
+import java.util.*;
+public class CountWord{
+    public static void countWords(String str){
+        String[] result = str.trim().split("\\s+");
+        int count = result.length;
+        System.out.println(count);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str =sc.nextLine();
+        countWords(str);
+    }
+}
