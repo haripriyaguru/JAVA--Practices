@@ -1,0 +1,35 @@
+import java.util.*;
+public class CheckAnagram{
+    public static boolean checkanagram(String str1,String str2){
+        if(str1.length()!=str2.length()){
+            return false;
+        }
+        int[] count=new int[26];
+        str1=str1.toLowerCase();
+        str2=str2.toLowerCase();
+        
+        for(char ch : str1.toCharArray()){
+            count[ch - 97]++;
+        }
+        for(char ch : str2.toCharArray()){
+            count[ch - 97]--;
+        }
+        for(int i=0;i<26;i++){
+            if(count[i]!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        if(checkanagram(str1,str2)){
+            System.out.println("The given string are anagram");
+        }
+        else{
+            System.out.println("The given string are not anagram");
+        }
+    }
+}
